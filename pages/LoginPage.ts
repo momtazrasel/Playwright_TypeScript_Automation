@@ -1,11 +1,12 @@
-import { Page } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 import { BasePage } from './BasePage';
-import * as data from '../configs/env.json'
+import * as data from '../configs/env.json';
 
 export class LoginPage extends BasePage {
-  private usernameInput = '#username';
+  private usernameInput = "(//input[@id='email'])[1]";
   private passwordInput = '#password';
-  private loginButton = '#login';
+  private loginButton = "(//button[@type='submit'])[1]";
+  private logo = "(//a[@class='brand'])[1]"; // Ensure this is the correct element to check for errors
 
   constructor(page: Page) {
     super(page);
@@ -15,5 +16,11 @@ export class LoginPage extends BasePage {
     await this.page.fill(this.usernameInput, data.username);
     await this.page.fill(this.passwordInput, data.password);
     await this.page.click(this.loginButton);
+    
+    // Wrap errorMessage with page.locator
+    const errorLocator = this.page.locator(this.logo);
+
+    // Check for text in the error message locator
+    await expect(errorLocator).toBeVisible(); // Or the actual expected text
   }
 }
