@@ -31,7 +31,7 @@ export default defineConfig({
     headless: false,
     screenshot: 'on',
     video: 'retain-on-failure',
-    baseURL: 'https://example.com',
+    baseURL: 'https://bracuerp-dev.apsissolutions.com/',
   },
 
 
