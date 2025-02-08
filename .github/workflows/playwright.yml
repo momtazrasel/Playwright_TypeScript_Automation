@@ -19,13 +19,13 @@ jobs:
       - name: Set Up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 10
+          node-version: 18  # ✅ Use Node.js 18 or 20
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci  # ✅ More reliable than `npm install`
 
       - name: Install Playwright Browsers
-        run: npx playwright install
+        run: npx playwright install --with-deps  # ✅ Installs browsers with dependencies
 
       - name: Run Playwright Tests
         run: npx playwright test
