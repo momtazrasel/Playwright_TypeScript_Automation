@@ -23,4 +23,13 @@ export class LoginPage extends BasePage {
     // Check for text in the error message locator
     await expect(errorLocator).toBeVisible(); // Or the actual expected text
   }
+
+  async verifyLoginSuccess() {
+    await this.isElementVisible(this.logo); // Adjust according to your application
+  }
+
+  // async verifyInvalidLogin() {
+  //   await this.isElementVisible(this.logo);
+  // }
+
 }
