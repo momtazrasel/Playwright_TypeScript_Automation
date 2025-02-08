@@ -1,4 +1,4 @@
-import { test } from './hooks';
+import { test } from '../tests/hooks';
 import { FinancePage } from '../pages/FinancePage';
 
 test.describe('Finance Module Tests', () => {
