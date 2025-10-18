@@ -35,7 +35,7 @@ export default defineConfig({
     screenshot: 'on',
     video: 'on',
     trace: 'on',
-    baseURL: 'https://bracuerp-dev.apsissolutions.com/',
+    baseURL: 'https://bracuerp-uat.wingserp.net/signin',
   },
 
 
@@ -46,15 +46,15 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {

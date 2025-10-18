@@ -6,7 +6,7 @@ export class LoginPage extends BasePage {
   private usernameInput = "(//input[@id='email'])[1]";
   private passwordInput = '#password';
   private loginButton = "(//button[@type='submit'])[1]";
-  private logo = "(//a[@class='brand'])[1]"; // Ensure this is the correct element to check for errors
+  private logo = "(//a[@class='brand'])"; // Ensure this is the correct element to check for errors
 
   constructor(page: Page) {
     super(page);
